@@ -1,0 +1,313 @@
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+	xmlns:smartmultiedit="sap.ui.comp.smartmultiedit"
+	height="100%"
+	controllerName="mozos.rating.controller.Detailed"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page showHeader="true" titleLevel="H1" titleAlignment="Center"
+		title="Sınaq Müddətinin Dəyərləndirmesi Formu">
+
+
+		<Panel class="sapUiSmallMarginEnd">
+			<f:Form editable="false">
+				<!-- <f:title>
+						<core:Title text="{i18n>personalhead}" />
+					</f:title> -->
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="8"
+						labelSpanS="8"
+						adjustLabelSpan="false"
+						emptySpanXL="2"
+						emptySpanL="2"
+						emptySpanM="2"
+						emptySpanS="2"
+						columnsXL="3"
+						columnsL="3"
+						columnsM="3"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:FormElement label="Personel Nömresi">
+							<Text text="{viewModel>/reportData/pernr}" />
+						</f:FormElement>
+						<f:FormElement label="Adı Soyadı">
+							<Text text="{viewModel>/reportData/ename}" />
+						</f:FormElement>
+						<f:FormElement label="Email">
+							<Text text="{viewModel>/reportData/email}" />
+						</f:FormElement>
+						<f:FormElement label="Başlanğıc Tarixi">
+							<Text text="{viewModel>/reportData/bgtrm}" />
+						</f:FormElement>
+						<f:FormElement label="Bitis Tarixi">
+							<Text text="{viewModel>/reportData/entrm}" />
+						</f:FormElement>
+						<f:FormElement label="Termin Türü">
+							<Text text="{viewModel>/reportData/tmart}" />
+						</f:FormElement>
+					</f:FormContainer>
+					<f:FormContainer>
+						<f:FormElement label="Saha/Bölme">
+							<Text text="{viewModel>/reportData/zz70t}" />
+						</f:FormElement>
+						<f:FormElement label="Sube">
+							<Text text="{viewModel>/reportData/zz60t}" />
+						</f:FormElement>
+						<f:FormElement label="Departman">
+							<Text text="{viewModel>/reportData/zz50t}" />
+						</f:FormElement>
+						<f:FormElement label="Direktörlük">
+							<Text text="{viewModel>/reportData/zz40t}" />
+						</f:FormElement>
+						<f:FormElement label="Müəssisə">
+							<Text text="{viewModel>/reportData/zz30t}" />
+						</f:FormElement>
+					</f:FormContainer>
+					<f:FormContainer>
+						<f:FormElement>
+							<Image src="{viewModel>/reportData/image}"
+								class="responsiveImage" />
+						</f:FormElement>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<!-- <HBox alignContent="SpaceAround">
+
+				<FlexBox id="_IDGenFlexBox2" wrap="Wrap" fitContainer="true"
+					alignContent="SpaceAround">
+					<Image src="{viewModel>/reportData/image}" width="60%" class="responsiveImage" />
+					<ToolbarSpacer width="25px" />
+					<l:VerticalLayout id="_IDGenVerticalLayout1">
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Personel Nömresi :"
+								class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/pernr}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Adı Soyadı    :"
+								class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/ename}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Email :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/email}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Başlanğıc Tarixi  :"
+								class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/bgtrm}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Bitis Tarixi  :"
+								class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/entrm}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Termin Türü :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/tmart} ay" />
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</FlexBox>
+				<FlexBox>
+					<l:VerticalLayout id="_IDGenVerticalLayout">
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Saha/Bölme :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/zz70t}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Sube :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/zz60t}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Departman :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/zz50t}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Direktörlük :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/zz40t}" />
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMarginEnd">
+							<Title titleStyle="H5" text="Müəssisə :" class="sapUiSmallMarginEnd"></Title>
+							<Text text="{viewModel>/reportData/zz30t}" />
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</FlexBox>
+			</HBox> -->
+		</Panel>
+		<VBox>
+			<Panel headerText="Emekdaşın Sınaq Mueddeti Deyerlendirilmesi">
+				<VBox class="sapUiSmallMargin" alignItems="Center">
+					<!-- <Title id="helpcommission1" text="{i18n>helpinfo}" /> -->
+					<Table class="showList" id="showList"
+						mode="SingleSelectMaster"
+						busy="{main>/busy}"
+						selectionChange="handleSelectionChange"
+						items="{
+					path: 'viewModel>/validatorData'
+				}"
+						growing="true"
+						busyIndicatorDelay="0"
+						width="auto"
+					>
+						<headerToolbar />
+						<columns>
+							<Column id="_IDGenColumn2" vAlign="Middle" hAlign="Begin" width="6rem">
+								<Text id="_IDGenTex2" class="sapThemeFont" text="Maddeler" />
+							</Column>
+							<Column id="_IDGenColumn1" vAlign="Middle" width="16rem">
+								<Text id="_IDGenText" class="sapThemeFont" text="Açıklama" />
+							</Column>
+							<Column id="_IDGenColumn5" vAlign="Middle" hAlign="End" width="6rem">
+								<Text id="_IDGenText5" class="sapThemeFont" text="Değerlendirme" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" id="entitlementColumnListItem">
+								<cells>
+									<ObjectAttribute id="_IDGenObjectAttribute4"
+										text="{viewModel>sqmtx}" />
+									<ObjectAttribute id="_IDGenObjectAttribute1"
+										text="{viewModel>sqltx}" />
+									<RatingIndicator id="RI_L" maxValue="10"
+										class="sapUiSmallMarginBottom"
+										value="{viewModel>rate}" iconSize="12px" enabled="true"
+										editable="false" tooltip="Rating Tooltip" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</VBox>
+			</Panel>
+		</VBox>
+		<HBox>
+			<Panel headerText="Dəyərləndirme Sonucu">
+				<HBox>
+					<VBox width="50%">
+
+						<Table class="showList" id="showList1"
+							mode="SingleSelectMaster"
+							busy="{main>/busy}"
+							selectionChange="handleSelectionChange"
+							growing="true"
+							busyIndicatorDelay="0"
+							width="auto"
+						>
+							<headerToolbar />
+							<columns>
+								<Column id="_IDGenColumn12" vAlign="Middle" hAlign="Begin"
+									width="6rem">
+									<Text id="_IDGenTex21" class="sapThemeFont" text="Yekun"
+										textAlign="Center" />
+								</Column>
+								<Column id="_IDGenColumn11" vAlign="Middle" width="6rem">
+									<Text id="_IDGenTex1t" class="sapThemeFont" text="Netice"
+										textAlign="Center" />
+								</Column>
+
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle" id="entitlementColumnListItem1">
+									<cells>
+										<ObjectAttribute id="_IDGenObjectAttribute14"
+											text="{viewModel>/questionDatas/total}" />
+
+										<ObjectAttribute id="_IDGenObjectAttribute11"
+											text="{viewModel>/questionDatas/sqrst}" />
+
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+
+
+					</VBox>
+					<!-- class="sapUiLargeMargin" -->
+					<HBox alignContent="Center" alignItems="Center" justifyContent="Center"
+						width="50%">
+						<VBox width="50%">
+							<l:VerticalLayout class="sapUiContentPadding">
+								<MessageStrip
+									text="nəticə 0-20 : Sınaq müddətində uyğun görülməmişdir"
+									type="Information">
+								</MessageStrip>
+								<MessageStrip
+									text="nəticə 21-40 : Sınaq müddətini keçmişdir"
+									type="Warning"
+									close="handleClose">
+								</MessageStrip>
+								<MessageStrip
+									text="nəticə 41-50 : Sınaq müddətini uğurla keçmişdir"
+									type="Success">
+								</MessageStrip>
+							</l:VerticalLayout>
+						</VBox>
+					</HBox>
+
+
+				</HBox>
+			</Panel>
+		</HBox>
+
+
+		<VBox id="managementdecision" class="sapUiSmallMargin">
+			<Panel expandable="{main>/managementDecision}"
+				visible="{main>/managementDecisioniVisible}"
+				headerText="Müəssisə rəhbərinin təsdiq ve qeydləri">
+				<f:Form id="FormDisplay480_12120Dual8" editable="false">
+					<f:title>
+						<!-- <core:Title id="helpcommission1" text="{i18n>helpinfo}" /> -->
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout id="grid12"
+							labelSpanXL="1"
+							labelSpanL="1"
+							labelSpanM="12"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="0"
+							emptySpanL="0"
+							emptySpanM="0"
+							emptySpanS="0"
+							columnsXL="5"
+							columnsL="5"
+							columnsM="5"
+							singleContainerFullSize="true"
+						/>
+					</f:layout>
+
+					<f:formContainers>
+						<f:FormContainer id="chapter12" title="">
+							<f:formElements>
+								<f:FormElement id="Admit12">
+									<TextArea id="managementdecision11"
+										value="{viewModel>/manager2/tMngr2O}"
+										editable="false" growing="true" growingMaxLines="10"
+										width="50%" height="100px" />
+
+								</f:FormElement>
+								<!-- <f:FormElement id="Admit1212"  >
+									<Label  text=" Qarar :"></Label>
+									</f:FormElement>
+									<f:FormElement id="Admit122"  >
+									
+									<Input 
+									width="10%"
+									value="{viewModel>/manager2/tMngr2P}"
+									editable="false" />
+									</f:FormElement> -->
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+					<f:formContainers />
+				</f:Form>
+			</Panel>
+		</VBox>
+	</Page>
+</mvc:View>

@@ -1,0 +1,8 @@
+{
+  "sap": {
+    "target": "",
+    "auth": "Xmozos:mozos.",
+    "rejectUnauthorized" : false,
+    "strictSSL": false
+  }
+}

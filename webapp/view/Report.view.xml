@@ -1,0 +1,77 @@
+<mvc:View controllerName="mozos.rating.controller.Report" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:export="sap.ui.export" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+    <Page id="page" floatingFooter="false" showSubHeader="false">
+        <headerContent>
+            <Title class="sapUiTinyMarginBegin bolder" level="H1"  />
+            <ToolbarSpacer />
+            <VBox alignContent="End" alignItems="End">
+                <HBox class="sapUiTinyMargin">
+                    <Label text="Başlanğic Tarix / Son Tarix" labelFor="DRS1" class="sapUiTinyMarginTop sapUiTinyMarginEnd" />
+                    <DateRangeSelection class="sapUiMediumMarginEnd" id="DRS1" delimiter="-" dateValue="{path:'mainModel>/SelectedBegda'}" secondDateValue="{path:'mainModel>/SelectedEndda'}" displayFormat="dd.MM.yyyy" change="onDateRangeChange" />
+                </HBox>
+            </VBox>
+        </headerContent>
+        <content>
+            <Table class="" id="timeEventsTable" items="{
+						path: 'viewModel>/reportData'
+					}" growing="true" busyIndicatorDelay="0" width="auto">
+                <headerToolbar />
+                <columns >
+                    <Column  vAlign="Middle" hAlign="Center" width="auto">
+                        <Text  class = "sapThemeFont" text="Sənəd No" />
+                    </Column>
+                    <Column  vAlign="Middle" hAlign="Center" width="auto">
+                        <Text  class = "sapThemeFont" text="Personal Nömresi" />
+                    </Column>
+                    <Column vAlign="Middle" hAlign="Center">    
+                        <Text  class = "sapThemeFont" text="Adı Soyadı" />
+                    </Column>
+                    <Column vAlign="Middle" hAlign="Center">
+                        <Text  class = "sapThemeFont" text="Təsdiq edən" />
+                    </Column>
+                    <Column  vAlign="Middle" hAlign="Center" width="auto">
+                        <Text  class = "sapThemeFont" text="Təsdiq  Durum" />
+                    </Column>
+                    <Column  vAlign="Middle" hAlign="Center" width="auto">
+                        <Text  class = "sapThemeFont" text="Başlangıç Tarixi" />
+                    </Column>
+                    <Column  vAlign="Middle" hAlign="Center" width="auto">
+                        <Text  class = "sapThemeFont" text="Bitiş Tarixi" />
+                    </Column>
+                    <Column width="200px" id="change" hAlign="Left">
+                        <Text id="change2" width="200px" text="Göstər" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle" type="{= ${device>/system/phone} ? 'Navigation' : 'Inactive' }" id="entitlementColumnListItem">
+                        <customData>
+                            <core:CustomData key="mydata" value="{mainModel>Stat}" writeToDom="true"></core:CustomData>
+                        </customData>
+
+                        <cells>
+                        <Text text="{viewModel>awref}" />
+                        <Text text="{viewModel>pernr}" />
+                        <Text text="{viewModel>ename}" />
+                            <Text text="{viewModel>mangx}" /><Text text="{viewModel>statx}" />  
+                        <Text text="{viewModel>bgtrm}" />
+                        <Text text="{viewModel>entrm}" />
+
+                            <core:Icon
+                            press="editClick(${viewModel>awref},${viewModel>pernr})"
+                            src="sap-icon://show"
+                            class="size16"
+                             visible="{viewModel>Updfx}">
+                            <core:layoutData>
+                                <FlexItemData growFactor="1" />
+                            </core:layoutData>
+                        </core:Icon>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </content>
+        <footer>
+           <Bar ></Bar>
+        </footer>
+    </Page>
+</mvc:View>
